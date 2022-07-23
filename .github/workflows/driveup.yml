@@ -23,13 +23,13 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-      - name: Clear Space
-        run: |
-          sudo apt remove *CLI *android* ruby pypy nodejs
-          sudo apt autoremove
-          sudo rm -rf /usr/share/dotnet/ /usr/share/google-cloud-sdk/ /usr/share/php* /usr/lib/google-cloud-sdk/ /opt/ /usr/local/lib/android
-          sudo apt-get --purge remove
-          df -h $GITHUB_WORKSPACE
+#       - name: Clear Space
+#         run: |
+#           sudo apt remove *CLI *android* ruby pypy nodejs
+#           sudo apt autoremove
+#           sudo rm -rf /usr/share/dotnet/ /usr/share/google-cloud-sdk/ /usr/share/php* /usr/lib/google-cloud-sdk/ /opt/ /usr/local/lib/android
+#           sudo apt-get --purge remove
+#           df -h $GITHUB_WORKSPACE
       - uses: actions/checkout@v2.3.4
       - name: Install Rclone
         run: |
